@@ -2,6 +2,29 @@ package com.epam.Strings;
 
 public class PalindromicSubstring {
 	
+	// alternate solution from https://leetcode.com/articles/palindromic-substrings/
+	
+	public int count(String s)
+	{
+		int n = s.length();
+		int count = 2*n -1;
+		int answer=0;
+		for(int center =0;center<=count;center++)
+		{
+			int left = center/2;
+			int right = center%2 +left;
+			
+			while(left >= 0 && right<n && s.charAt(left)==s.charAt(right))
+			{
+				answer++;
+				left--;
+				right++;
+			}
+		}
+		
+		return answer;
+	}
+	
 	public int countSubstrings(String s) 
 	{
 		int count=0;
@@ -32,7 +55,7 @@ public class PalindromicSubstring {
 	public static void main(String[] args) 
 	{
 		PalindromicSubstring ps = new PalindromicSubstring();
-		System.out.println(ps.countSubstrings("abc"));
+		System.out.println(ps.count("abc"));
 
 	}
 
