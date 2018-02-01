@@ -1,17 +1,7 @@
 package com.epam.Trees;
 
-import java.util.HashMap;
-
 public class MergeTrees {
 	
-	private class TreeNode
-	{
-		int val;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int x) { val = x; }
-	}
-	HashMap<Integer, Integer> map = new HashMap<>();
 	
 	public TreeNode mergeTrees(TreeNode t1, TreeNode t2) 
     {
