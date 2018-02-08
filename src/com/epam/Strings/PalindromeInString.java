@@ -1,6 +1,5 @@
 package com.epam.Strings;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class PalindromeInString {
@@ -30,13 +29,14 @@ public class PalindromeInString {
 			s2frequency[s2.charAt(i)-'a']--;
 		}
 		
-		return false;
+		return Arrays.equals(s1frequency, s2frequency);
     }
+	
 	
 
 	public static void main(String[] args) 
 	{
-		String s1 = "ab", s2 = "eidboaoo";
+		String s1 = "adc", s2 = "dcda";
 		PalindromeInString ps = new PalindromeInString();
 		System.out.println(ps.checkInclusion(s1, s2));
 
