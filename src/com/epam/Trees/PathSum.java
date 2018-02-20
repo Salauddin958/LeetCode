@@ -17,9 +17,10 @@ public class PathSum {
 		return hasPathSum(root.left, sum-root.val) || hasPathSum(root.right, sum-root.val);
     }
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
-
+		
 	}
 
 }
