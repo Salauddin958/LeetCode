@@ -130,7 +130,7 @@ public class Magic_Vowels {
 	
 	private static String buildMagicVowels(String input)
 	{
-		StringBuilder sb = new StringBuilder();
+		
 		char[] array = input.toCharArray();
 		HashMap<Character, Integer> charMap = new HashMap<>();
 		charMap.put('a', 1);
@@ -139,16 +139,23 @@ public class Magic_Vowels {
 		charMap.put('o', 4);
 		charMap.put('u', 5);
 		int preference = 1;
+		String result="";
 		for(int i=0;i<array.length;i++)
 		{
-			if (preference <= charMap.get(array[i])) 
+			StringBuilder sb = new StringBuilder();
+			for (int j = i; j <array.length; j++) 
 			{
-				sb.append(array[i]);
-				preference = charMap.get(array[i]);
+				if (preference <= charMap.get(array[j])) 
+				{
+					sb.append(array[j]);
+					preference = charMap.get(array[j]);
+				}
 			}
+			result = result.length() > sb.toString().length() ? result : sb.toString();
+			System.out.println(result);
 		}
 		
-		return sb.toString();
+		return result;
 	}
 	
 	public static void main(String[] args) 
